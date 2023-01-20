@@ -62,8 +62,8 @@ pub fn app() -> Html {
 
 
             <div class="row">
-                <button type="button" onclick={drink}>{"Start Drink"}</button>
-                <button type="button" onclick={drag}>{"Have Drag"}</button>
+                <button type="button" onclick={drink}>{"Drink"}</button>
+                <button type="button" onclick={drag}>{"Medicine"}</button>
             </div>
         </main>
     }

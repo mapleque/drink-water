@@ -56,7 +56,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 400,
+        "height": 300,
         "resizable": false,
         "title": "drink-water",
         "width": 500
