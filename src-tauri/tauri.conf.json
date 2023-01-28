@@ -56,9 +56,9 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 300,
+        "height": 320,
         "resizable": false,
-        "title": "drink-water",
+        "title": "Drink Water @ mapleque.com",
         "width": 500
       }
     ]
