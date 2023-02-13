@@ -115,45 +115,25 @@ pub fn app() -> Html {
         }
     };
 
-    let medicine_at = use_state(|| Local::now().format("%H:%M:%S").to_string());
-    let medicine_counter = use_state(|| 0);
-
-    let medicine = {
-        let medicine_counter = medicine_counter.clone();
-        let medicine_at = medicine_at.clone();
-        move |_| {
-            let v = *medicine_counter + 1;
-            medicine_counter.set(v);
-            medicine_at.set(Local::now().format("%H:%M:%S").to_string());
-        }
-    };
-
     let reset = {
         let drink_counter = drink_counter.clone();
         let drink_at = drink_at.clone();
-        let medicine_counter = medicine_counter.clone();
-        let medicine_at = medicine_at.clone();
         move |_| {
             drink_counter.set(0);
             drink_at.set(Local::now().format("%H:%M:%S").to_string());
-            medicine_counter.set(0);
-            medicine_at.set(Local::now().format("%H:%M:%S").to_string());
         }
     };
 
     html! {
         <main class="container">
-            <h1>{"Keep health, Drink water!"}</h1>
             <div>
                 <button type="button" onclick={reset}>{"Reset Today"}</button>
             </div>
             <div class="row">
                 <span class="logo"><b>{ *drink_counter }</b></span>
-                <span class="logo"><b>{ *medicine_counter }</b></span>
             </div>
             <div class="row">
                 <button type="button" onclick={drink}>{"Drink @ "}{ (*drink_at).clone() }</button>
-                <button type="button" onclick={medicine}>{"Medicine @ "}{ (*medicine_at).clone() }</button>
             </div>
         </main>
     }
